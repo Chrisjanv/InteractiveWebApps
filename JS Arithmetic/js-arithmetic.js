@@ -15,21 +15,17 @@ let circleRadius = 25;
 let triangleBase = 20;
 let triangleHeight = 9;
 
+
+// Rectangle
 let rectangleArea = rectangleLength * rectangleBreadth;
-
-// Append your rectangle answer:
 console.log("The area of the given rectangle is : " + rectangleArea);
-
 console.log("\n");
 
+// Circle
 let circleArea = pi*(Math.pow(circleRadius,half));
-
-// Append your circle answer:
 console.log("The area of the given circle is : " + circleArea);
-
 console.log("\n");
 
+// Triangle
 let triangleArea = (half*triangleBase)*triangleHeight ;
-
-// Append your triangle answer:
 console.log("The area of the given triangle is : " + triangleArea);
