@@ -1,4 +1,4 @@
-let userNumber = prompt('Please provide a number');
+let userNumber = prompt('Please provide a integer larger than zero');
 userNumber = parseInt(userNumber);
 
 function evenOrOdd(num) {
@@ -8,8 +8,8 @@ function evenOrOdd(num) {
     else if (num%2===1){
         console.log('Odd');
     }
-    else if (num === null || num === "" || isNaN(num)) {
-        alert("You did not enter a number. Please try again.");
+    else if (num === null || num === "" || isNaN(num) || num<1) {
+        alert("You did not enter an accepted number. Please try again.");
         location.reload();
     }
 }
