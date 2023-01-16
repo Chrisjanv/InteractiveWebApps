@@ -3,13 +3,15 @@ userNumber = parseInt(userNumber);
 
 function evenOrOdd(num) {
     if (num%2===0){
-        console.log('Even');
+        alert('Even');
+        location.reload();
     }
     else if (num%2===1){
-        console.log('Odd');
+        alert('Odd');
+        location.reload();
     }
     else if (num === null || num === "" || isNaN(num) || num<1) {
-        alert("You did not enter an accepted number. Please try again.");
+        alert('You did not enter an accepted number. Please try again.');
         location.reload();
     }
 }
