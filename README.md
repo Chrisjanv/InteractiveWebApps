@@ -1,2 +1,2 @@
 # InteractiveWebApps
- Code Space Module
+ Code Space Module with all relevant challenges.
