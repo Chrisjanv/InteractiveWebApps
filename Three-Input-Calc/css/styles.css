@@ -10,3 +10,10 @@
 .h1,.h2{
     text-align: center;
 }
+.main{
+    margin-top: 3rem;
+}
+
+button{
+    margin-top: 1rem;
+}

@@ -28,4 +28,5 @@ switch (userMathOperator){
 
 }
 
+document.getElementById('answer').innerHTML = "Your total is:" + total;
 console.log(total);

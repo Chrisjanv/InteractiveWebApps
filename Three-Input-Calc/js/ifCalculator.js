@@ -22,3 +22,4 @@ else if (userMathOperator === '*') {
 }
 
 console.log(total);
+document.getElementById('answer').innerHTML = "Your total is:" + total;
