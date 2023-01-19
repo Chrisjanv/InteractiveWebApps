@@ -1,0 +1,12 @@
+.body{
+    background-color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    width: 100%;
+}
+
+.h1,.h2{
+    text-align: center;
+}
