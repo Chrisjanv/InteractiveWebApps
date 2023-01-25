@@ -2,6 +2,7 @@ alert('Please enter two whole numbers greater than 0');
 
 let userNumberOne = prompt('Please enter your first number');
 while (userNumberOne<=0){
+    alert('Please enter a number greater than 0');
     userNumberOne = prompt('Please enter your first number again');
 }
 
@@ -16,6 +17,7 @@ while (operators.indexOf(userMathOperator) === -1) {
 
 let userNumberTwo = prompt('Please enter your second number');
 while (userNumberTwo <= 0) {
+    alert('Please enter a number greater than 0');
     userNumberTwo = prompt('Please enter your second number again');
 }
 
