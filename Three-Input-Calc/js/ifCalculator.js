@@ -5,7 +5,15 @@ while (userNumberOne <= 0) {
     userNumberOne = prompt('Please enter your first number again');
 }
 
-let userMathOperator = prompt('Please enter how the numbers need to be calculated');
+let operators = ['+', '-', '*', '/'];
+let userMathOperator;
+while (operators.indexOf(userMathOperator) === -1){ 
+ userMathOperator = prompt('Please enter how the numbers need to be calculated');
+ if (operators.indexOf(userMathOperator) === -1){
+    alert('Please enter a valid operator');
+ }
+}
+
 
 let userNumberTwo = prompt('Please enter your second number');
 while (userNumberTwo <= 0) {
