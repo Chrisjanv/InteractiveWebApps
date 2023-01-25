@@ -19,6 +19,7 @@ let userNumberTwo = prompt('Please enter your second number');
 while (userNumberTwo <= 0) {
     userNumberTwo = prompt('Please enter your second number again');
 }
+
 let total = 0;
 
 userNumberOne = parseInt(userNumberOne);
