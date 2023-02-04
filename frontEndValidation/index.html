@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-end Validation Challenge One</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="js.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+
+        <form action="" id="form">
+
+            <div>
+                <h1>SET TASK</h1>
+            </div>
+
+            <div>
+                <label for="newTask">New Task:</label>
+                <div class="tooltip">
+                    <input type="text" id="newTask" name="newTask">
+                    <span class="tooltiptext">REQUIRED and NO HTML characters allowed</span>
+                </div>
+                <div>
+                    <p id="warning">Please enter valid letters.</p>
+                </div>
+            </div>
+
+            <div>
+                <label for="description">Task description</label>
+                <div class="tooltip">
+                    <textarea type="text" id="description" name="description" rows="3"></textarea>
+                    <span class="tooltiptext">OPTIONAL</span>
+                </div>
+            </div>
+
+            <div>
+                <label for="date">Task Due Date</label>
+                <div class="tooltip">
+                    <input type="date" id="date" name="date">
+                    <span class="tooltiptext">REQUIRED</span>
+                </div>
+            </div>
+
+            <div>
+                <label for="time">Task Due Time</label>
+                <div class="tooltip">
+                    <input type="time" id="time" name="time">
+                    <span class="tooltiptext">REQUIRED</span>
+                </div>
+            </div>
+
+            <div>
+                <input type="submit" value="Submit" id="submit">
+            </div>
+
+        </form>
+
+        <div>
+            <ul id="newTaskList"></ul>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
