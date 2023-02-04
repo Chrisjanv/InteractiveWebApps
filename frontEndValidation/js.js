@@ -17,7 +17,6 @@ document.getElementById("form").addEventListener("submit", function (event) {
 });
 
 function myValidation() {
-
     let newTask = document.getElementById("newTask").value;
 
     if (/[<>&]/.test(newTask)) {
