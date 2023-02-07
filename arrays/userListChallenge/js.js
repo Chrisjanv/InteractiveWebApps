@@ -29,7 +29,3 @@ while (userChoice !== 0) {
         console.log('Invalid option, please enter a number between 0 and 4.');
     }
 }
-
-
-
-

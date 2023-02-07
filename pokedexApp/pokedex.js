@@ -25,7 +25,7 @@ function logic() {
 
     /* --- Part 1 : Create pokemon data Object --- */
 
-				// Use If to ensure input validation (ensure input fields are !empty)
+		// Use If to ensure input validation (ensure input fields are !empty)
         // Create pokemon object here (const pokemon) using user input Strings
 
 
