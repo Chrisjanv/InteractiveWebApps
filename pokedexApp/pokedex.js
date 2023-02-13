@@ -28,18 +28,34 @@ function logic() {
 		// Use If to ensure input validation (ensure input fields are !empty)
         // Create pokemon object here (const pokemon) using user input Strings
 
+    const pokemon = {
+        name : 'undefined',
+        type : 'undefined',
+        generations : 'undefined',
+        }
 
         // Create a span element (const pokemonData) and put the pokemon objects properties inside of it
 
+        const pokemonData = document.createElement('span');
 
 
     /* --- Part 2 : Creating other DOM Objects --- */
         
         // Create HTML li element here (const pokedexEntry)
 
+        const pokedexEntry = document.createElement('li');
 
         // Give pokedexEntry (li) a new class equal to the "type" property of the pokemon object
 
+
+
+
+        // Find out how to add classes to certain elements through if statement if they are a certain type
+
+
+
+
+        
 
         // Creating a preview button (using a Template Literal)
         // this code is for an html form that will Google search the name of the pokemon
