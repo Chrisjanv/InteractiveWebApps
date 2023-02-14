@@ -50,7 +50,6 @@ function logic() {
     // Create HTML li element here (const pokedexEntry)
 
     let ul = document.getElementById("pokedex-entries");
-
     let pokedexEntry = document.createElement("li");
 
     pokedexEntry.appendChild(document.createTextNode(pokemon.name));
