@@ -8,7 +8,18 @@ function logic() {
     region = region.value;
 
     if (name === '' || type === '' || region === '') {
+
         alert('Please enter valid data');
+
+        const form = document.getElementById('create-form');
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // prevent form submission if validation fails
+            logic();
+        });
+
+        return;
+        
     }
 
     const pokemon = {
