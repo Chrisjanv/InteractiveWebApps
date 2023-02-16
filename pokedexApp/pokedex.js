@@ -1,11 +1,13 @@
 function logic() {
 
     // First thing to do is get input from user
+    
     let name = document.getElementById("name");
     let type = document.getElementById("type");
     let region = document.getElementById("region");
 
     // Get String values of variables
+
     name = name.value;
     type = type.value;
     region = region.value;
@@ -15,7 +17,6 @@ function logic() {
      *---------------------------------------------*/
 
     // Use If to ensure input validation (ensure input fields are !empty)
-
 
     if( name ==='' || type === '' || region === '' ){
         alert('Please enter valid data');
@@ -39,35 +40,31 @@ function logic() {
     console.log(pokemon.type);
     console.log(pokemon.region);
 
-
     // Create a span element (const pokemonData) and put the pokemon objects properties inside of it
 
     const pokemonData = document.createElement('span');
-
 
     /* --- Part 2 : Creating other DOM Objects --- */
 
     // Create HTML li element here (const pokedexEntry)
 
-    let ul = document.getElementById("pokedex-entries");
     let pokedexEntry = document.createElement("li");
-
-    pokedexEntry.appendChild(document.createTextNode(pokemon.name));
-    ul.appendChild(pokedexEntry);
-
-
 
     // Give pokedexEntry (li) a new class equal to the "type" property of the pokemon object
 
-
-
-
-    // Find out how to add classes to certain elements through if statement if they are a certain type
-
-
-
-
-
+    if (pokemon.type === 'water') {
+        pokedexEntry.className = "water";
+    }else if (pokemon.type === 'normal') {
+        pokedexEntry.className = 'normal';
+    }else if (pokedex.type === 'grass'){
+        pokedexEntry.className = 'grass';
+    }else if (pokemon.type === 'fire'){
+        pokedexEntry.className = 'fire';
+    }else if (pokemon.type === 'electric'){
+        pokedexEntry.className = 'electric'
+    }else{
+        pokedexEntry.className = 'other';
+    }
 
     // Creating a preview button (using a Template Literal)
     // this code is for an html form that will Google search the name of the pokemon
