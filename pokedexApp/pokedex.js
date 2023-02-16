@@ -75,17 +75,20 @@ function logic() {
             </form>
         `
 
-
     /* --- Part 3 : Add things into the DOM --- */
 
     // Firstly append pokemonData to the innerHTML of pokedexEntry
 
+    const ul = document.getElementById('pokedex-entries');
+    pokedexEntry.innerHTML = pokemonData;
 
     // Secondly append the previewButton to innerHTML of pokedexEntry
 
 
+
     // Lastly we will get the ul List element that is meant to contain all pokedex entries
-    // The we will append pokedexEntry to the innerHTML of the pokedexEntries ul element
+
+    // Then we will append pokedexEntry to the innerHTML of the pokedexEntries ul element
 
 
     /*-----------------------------------------------
