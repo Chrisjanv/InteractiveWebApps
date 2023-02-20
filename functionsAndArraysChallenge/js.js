@@ -1,5 +1,6 @@
 //Below you shall find a tasks array which we will use for the rest of this challenge
 //One line below this is the tasksCompleted array that we are going to use further use
+
 let tasks = ['swim', 'eat', 'study', 'read', 'sleep'];;
 let tasksCompleted = [true, false, true, true, false];
 
@@ -18,12 +19,10 @@ if ( tasksCompleted[0] === true ){
 }
 console.log(tasks);
 
-
 tasks.unshift('party');
 tasksCompleted.unshift(false);
 console.log(tasks);
 console.log(tasksCompleted);
-
 
 tasks.push('run');
 tasksCompleted.push(true);
@@ -35,11 +34,9 @@ tasksCompleted.push(false,true);
 console.log(tasks);
 console.log(tasksCompleted);
 
-
 //Activity 2 - Complete this function. 
 //Create a for loop that can loop through an array and print out all the array items in the console.
 //This function takes a parameter of arrayName.
-
 
 function displayArray(arrayName) {
     for (let i = 0; i < arrayName.length; i++) {
@@ -58,19 +55,20 @@ displayArray(tasks);
 //Create a for loop that calculates the sum of all the values in an array store the answer in the total variable.
 //Outside the for loop, console log the total.
 
-
 function calculateTotal(arrayName) {
-
-
-
-
+    let total = 0;
+    for (let i = 0; i < arrayName.length; i++) {
+        if (arrayName[i] === true){
+            total++;
+        }    
+    }
+    console.log(total);
 }
 
 //Activity 5 - Call the calculateTotal function and pass tasksCompleted as an argument.
 //Add your code below
 
-
-
+calculateTotal(tasksCompleted);
 
 //Activity 6 - Complete this function
 //The purpose of this function is to calculate the average of the values put together in an array
@@ -79,18 +77,19 @@ function calculateTotal(arrayName) {
 //Outside the for loop, create a variable called average and store your calculations of the average in that variable
 //Add your code below
 
+function calculateAverage(arrayName) {
+    let total = 0;
+    for (let i = 0; i < arrayName.length; i++) {
+        if (arrayName[i] === true) {
+            total++;
+        }
+    }
+    let average = (total / arrayName.length) * 100;
+    console.log(average);
+}
+
 
 //Activity 7 - Call your calculate average function with tasksCompleted array as it's argument
 //Add your code below
 
-
-//Bonus Activity:
-//Rewrite activity 6 to calculate the average of the amount of tasksCompleted that is equal to true
-//Add your code below
-
-//Create a function that takes two array parameters, the second parameter being a rest parameter
-//Within your function block, specify a condition to prevent your function from having more than a 3 argument values
-//Within the arguments condition, loop through the array arguments provided and concole.log each value
-//Console.log your argument length an your function
-//Refer to the Arguments method taught in the 3rd lesson
-//Add your code below
+calculateAverage(tasksCompleted);
