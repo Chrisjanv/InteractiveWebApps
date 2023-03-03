@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <html>
+
+    <body>
+
+        <!-- Create a simple form without an action and a method attribute -->
+        <!-- Within your form, create an input with a type of text and submit -->
+        <!-- Add your code below -->
+        <form>
+            <input type="text" id="newTask">
+            <input type="submit">
+        </form>
+
+
+        <script>
+            //Create a class called Tasks
+            class newTasks {
+                //Make sure your class has a constructor with a private variable
+                constructor(task) {
+                    //Within your Constructor, make sure you have a parameter of task which is equal to a private variable in your constructor
+                    this._task = task;
+                }
+                //Create a getter that returns the variable within your constructor
+                get task() {
+                    return this._task;
+                }
+            }
+
+            //Instantiate your Task class and store the object in a variable
+            let newTask = document.getElementById('newTask');
+            newTask = newTask.value;
+            const Tasks =  Tasks(newTask);
+            //Console log your Tasks object, by calling the getter
+            console.log(Tasks.newTask);
+        //Your code should look like the example below:
+        //const myObject = new Tasks('whatsup')
+        //console.log(myObject.task)
+        </script>
+
+
+
+    </body>
+
+    </html>
