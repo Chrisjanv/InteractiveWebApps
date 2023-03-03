@@ -1,42 +1,85 @@
-/* ----------------------------------------------------
-    Setup
----------------------------------------------------- */
+// Set up event listener for the register form submit button
+const registerForm = document.getElementById("register-form");
+registerForm.addEventListener("submit", registerUser);
 
-/* --- Tab References --- */
+// Function to handle user registration
+function registerUser(event) {
+    event.preventDefault(); // Prevent form submission
 
-    // Get reference to all elements in register tab
-    const registerTab = document.getElementsByClassName("register");
-    console.log(registerTab);
+    // Get form values
+    const firstname = document.getElementById("firstname").value;
+    const lastname = document.getElementById("lastname").value;
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-    // Get reference to all elements in userList tab
-    const userTabs = document.getElementsByClassName("users");
-    console.log(userTabs);
+    // Create new user entry
+    const userEntry = document.createElement("li");
+    userEntry.classList.add("entry");
+    userEntry.innerHTML = `
+    <span>${username}</span>
+    <span>${firstname}</span>
+    <span>${lastname}</span>
+    <span>${email}</span>
+    <span>${password}</span>
+  `;
 
+    // Add new user entry to user list
+    const userList = document.getElementById("user-list");
+    userList.appendChild(userEntry);
 
-/* --- Nav references --- */
+    // Reset form fields
+    registerForm.reset();
+}
 
-    // code here...
+// Set up event listener
+// handle form submission
+registerForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
+    // get form data
+    const firstName = document.getElementById('firstname').value;
+    const lastName = document.getElementById('lastname').value;
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-/* --- Form field references --- */
+    // create new user entry
+    const userEntry = createUserEntry(username, firstName, lastName, email, password);
 
-    // code here...
+    // add user entry to user list
+    const userList = document.getElementById('user-list');
+    userList.appendChild(userEntry);
 
+    // clear form inputs
+    registerForm.reset();
+});
 
-/* --- Table list reference --- */
+// helper function to create new user entry
+function createUserEntry(username, firstName, lastName, email, password) {
+    const userEntry = document.createElement('li');
+    userEntry.classList.add('entry');
 
-    // code here...
+    const usernameSpan = document.createElement('span');
+    usernameSpan.textContent = username;
 
+    const firstNameSpan = document.createElement('span');
+    firstNameSpan.textContent = firstName;
 
+    const lastNameSpan = document.createElement('span');
+    lastNameSpan.textContent = lastName;
 
-/* ----------------------------------------------------
-    Functionality
----------------------------------------------------- */
+    const emailSpan = document.createElement('span');
+    emailSpan.textContent = email;
 
-    // code here...
+    const passwordSpan = document.createElement('span');
+    passwordSpan.textContent = password;
 
+    userEntry.appendChild(usernameSpan);
+    userEntry.appendChild(firstNameSpan);
+    userEntry.appendChild(lastNameSpan);
+    userEntry.appendChild(emailSpan);
+    userEntry.appendChild(passwordSpan);
 
-
-/* ----------------------------------------------------
-    Event Listenters and Interactivity
----------------------------------------------------- */
+    return userEntry;
+}
