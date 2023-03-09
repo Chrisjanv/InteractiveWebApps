@@ -1,49 +1,42 @@
-class User {
-    constructor(firstname, lastname, username, email, password) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
+/* ----------------------------------------------------
+    Setup
+---------------------------------------------------- */
 
-    // Method to create new user entry
-    createUserEntry() {
-        const userEntry = document.createElement("li");
-        userEntry.classList.add("entry");
-        userEntry.innerHTML = `
-      <span>${this.username}</span>
-      <span>${this.firstname}</span>
-      <span>${this.lastname}</span>
-      <span>${this.email}</span>
-      <span>${this.password}</span>
-    `;
-        return userEntry;
-    }
-}
+/* --- Tab References --- */
 
-// Set up event listener for the register form submit button
-const registerForm = document.getElementById("register-form");
-registerForm.addEventListener("submit", registerUser);
+    // Get reference to all elements in register tab
+    const registerTab = document.getElementsByClassName("register");
+    console.log(registerTab);
 
-// Function to handle user registration
-function registerUser(event) {
-    event.preventDefault(); // Prevent form submission
+    // Get reference to all elements in userList tab
+    const userTabs = document.getElementsByClassName("users");
+    console.log(userTabs);
 
-    // Get form values
-    const firstname = document.getElementById("firstname").value;
-    const lastname = document.getElementById("lastname").value;
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
 
-    // Create new user
-    const user = new User(firstname, lastname, username, email, password);
+/* --- Nav references --- */
 
-    // Add new user entry to user list
-    const userList = document.getElementById("user-list");
-    userList.appendChild(user.createUserEntry());
+    const 
 
-    // Reset form fields
-    registerForm.reset();
-}
+
+/* --- Form field references --- */
+
+    // code here...
+
+
+/* --- Table list reference --- */
+
+    // code here...
+
+
+
+/* ----------------------------------------------------
+    Functionality
+---------------------------------------------------- */
+
+    // code here...
+
+
+
+/* ----------------------------------------------------
+    Event Listenters and Interactivity
+---------------------------------------------------- */
