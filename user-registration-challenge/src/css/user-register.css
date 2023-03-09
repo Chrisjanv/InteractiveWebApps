@@ -2,26 +2,23 @@
 
 /* ----- APP Styles here ------ */
 
-    /* ---------remove this comment to start---------
+.register {
+  display: block;
+}
 
-        .register {
-            display: block;
-        } 
-
-        .users {
-            display: none;
-        }
-
-    ---------remove this comment to start--------- */
+.users {
+  display: none;
+}
 
 /* id for control form */
 #register-form {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   margin: 0 25vw;
 }
-#register-form input{
-  font-size: 1.25rem;  
+
+#register-form input {
+  font-size: 1.25rem;
 }
 
 
@@ -40,10 +37,11 @@
 .entry {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  background-color: rgb(240, 240, 240); 
+  background-color: rgb(240, 240, 240);
   border-radius: 15px;
-  word-wrap: break-word; 
+  word-wrap: break-word;
 }
+
 .entry span {
   padding: 1rem;
   word-wrap: break-word;
@@ -100,6 +98,6 @@ nav button {
 
 }
 
-header h1{
+header h1 {
   text-align: center;
 }
