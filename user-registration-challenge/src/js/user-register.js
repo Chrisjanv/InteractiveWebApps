@@ -1,3 +1,14 @@
+// Its completely wrong, I havent had time because of work. Plus I included classes which are only in the next topic.
+
+
+
+
+
+
+
+
+
+
 // Define User class
 class User {
     constructor(firstname, lastname, username, email, password) {
