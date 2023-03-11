@@ -7,7 +7,7 @@
 }
 
 .users {
-  display: none;
+  display: block;
 }
 
 /* id for control form */

@@ -1,17 +1,19 @@
-const usersTabButton = document.getElementById("users-tab-button");
-const registerTabButton = document.getElementById("register-tab-button");
-const registerForm = document.getElementById("register-form");
-const userList = document.getElementById("user-list");
+const registerTab = document.querySelector(".register");
+const usersTab = document.querySelector(".users");
+const registerForm = document.querySelector("#register-form");
+const viewUsersBtn = document.querySelector("#register-tab-button");
+const registerUserBtn = document.querySelector("#users-tab-button");
+const usersList = document.querySelector("#user-list");
 
 let users = [];
 
 function createUser() {
-    const firstName = document.getElementById("firstname").value;
-    const lastName = document.getElementById("lastname").value;
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const newUser = { firstName, lastName, username, email, password };
+    const firstName = document.querySelector("#firstname").value;
+    const lastName = document.querySelector("#lastname").value;
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+    const username = document.querySelector("#username").value;
+    const newUser = { firstName, lastName, email, password, username };
     users.push(newUser);
     return newUser;
 }
@@ -20,21 +22,20 @@ function createUserElement(user) {
     const userElement = document.createElement("li");
     userElement.classList.add("user");
     userElement.innerHTML = `
-      <span class="user-value">${user.username}</span>
-      <span class="user-value">${user.firstName}</span>
-      <span class="user-value">${user.lastName}</span>
-      <span class="user-value">${user.email}</span>
-      <span class="user-value">${user.password}</span>
-      <button class="delete-button">Delete</button>
+    <span>${user.username}</span>
+    <span>${user.firstName}</span>
+    <span>${user.lastName}</span>
+    <span>${user.email}</span>
+    <span>${user.password}</span>
     `;
     return userElement;
 }
 
 function populateUserList(users) {
-    userList.innerHTML = "";
+    usersList.innerHTML = "";
     users.forEach(user => {
         const userElement = createUserElement(user);
-        userList.appendChild(userElement);
+        usersList.appendChild(userElement);
     });
 }
 
@@ -42,30 +43,28 @@ registerForm.addEventListener("submit", event => {
     event.preventDefault();
     const newUser = createUser();
     registerForm.reset();
+    viewUsersBtn.click();
     console.log("New user created:", newUser);
 });
 
-usersTabButton.addEventListener("click", () => {
-    usersTabButton.classList.add("active");
-    registerTabButton.classList.remove("active");
-    userList.style.display = "block";
-    registerForm.style.display = "none";
+registerUserBtn.addEventListener("click", () => {
+    registerTab.style.display = "block";
+    usersTab.style.display = "none";
+});
+
+viewUsersBtn.addEventListener("click", () => {
+    usersTab.style.display = "block";
+    registerTab.style.display = "none";
     populateUserList(users);
 });
 
-registerTabButton.addEventListener("click", () => {
-    registerTabButton.classList.add("active");
-    usersTabButton.classList.remove("active");
-    registerForm.style.display = "block";
-    userList.style.display = "none";
-});
-
-userList.addEventListener("click", event => {
-    if (event.target.classList.contains("delete-button")) {
-        const userElement = event.target.parentNode;
-        const userIndex = Array.from(userList.children).indexOf(userElement);
+usersList.addEventListener("click", event => {
+    if (event.target.classList.contains("user")) {
+        const userElement = event.target;
+        const userIndex = Array.from(usersList.children).indexOf(userElement);
         users.splice(userIndex, 1);
-        userList.removeChild(userElement);
+        usersList.removeChild(userElement);
     }
 });
+
 
