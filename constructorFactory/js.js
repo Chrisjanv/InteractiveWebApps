@@ -81,3 +81,6 @@ console.log(TODO.getTitle());
 
 //Add a prototype of 'completed' to the Task object and set it to a boolean value of 'true'
 //Console.log this prototype value, by using the 'todo' object
+
+Task2.prototype.completed = true;
+console.log(TODO.completed);
