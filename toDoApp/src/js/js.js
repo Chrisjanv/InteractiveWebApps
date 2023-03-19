@@ -7,3 +7,6 @@ class Task {
         this.importance = importance;
     }
 };
+
+// const task1 = new Task('CODE', 'Do to do App.', Date(), '25/03/2023', 'Very')
+// console.log(task1);
