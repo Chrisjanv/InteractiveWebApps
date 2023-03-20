@@ -1,12 +1,21 @@
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif  !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 /* Header */
 header {
     display: flex;
     flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+
+    background-color: #f8f9fa;
+}
+
+
+/* main */
+.main{
     max-width: 500px;
     margin: auto;
 }
@@ -30,7 +39,7 @@ form {
 @media only screen and (max-width: 535px) {
     form {
         margin-left: 1rem;
-        margin-right: 1rem;        
+        margin-right: 1rem;
     }
 }
 
