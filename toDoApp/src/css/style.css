@@ -4,7 +4,47 @@
     background-color: aliceblue;
 }
 
-#main{
+header {
     display: flex;
     flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+}
+
+h1,h3{
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+textarea,
+select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+input[type="date"],
+select {
+    margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
 }
