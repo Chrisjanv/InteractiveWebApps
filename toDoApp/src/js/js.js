@@ -8,7 +8,7 @@ class Task {
     }
 };
 
-// Initialize first array
+// Initialize arrays
 const tasks = [];
 const completedTasks = [];
 
@@ -58,19 +58,18 @@ function updateTasks() {
         taskEntries.appendChild(listItem);
 
 
-
-
-
         // cOMPLETE TASKS
         const completeButton = document.createElement('button');
         completeButton.textContent = "FIN";
         listItem.appendChild(completeButton);
 
-
-
-
-
-
+        completeButton.addEventListener('click', function () {
+            completedTasks.push(tasks[index]);
+            // Remove task from the array
+            tasks.splice(index, 1);
+            // Remove task entry from the UI
+            listItem.remove();
+        });
 
         const removeButton = document.createElement('button');
         removeButton.textContent = "DEL";
@@ -121,6 +120,14 @@ completedNav.addEventListener("click", () => {
     document.getElementById('tasks').style.display = 'none';
     document.getElementById('completedTasks').style.display = 'block';
     document.getElementById('taskForm').style.display = 'none';
+
+    const completedTasksDiv = document.getElementById('completedTasks');
+    completedTasksDiv.innerHTML = ''; // Clear the current tasks list
+
+    for (const completedTasksLoop of completedTasks) {
+        const listItem = document.createElement('p');
+        listItem.textContent = 'Title: ' + completedTasks.title + ' Description: ' + completedTasks.description + ' Due date: ' +
+            completedTasks.date_due + ' Importance: ' + completedTasks.importance;
+        completedTasksDiv.appendChild(listItem);
+    }
 });
-
-
