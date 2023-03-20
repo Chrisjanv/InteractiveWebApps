@@ -10,7 +10,7 @@ class Task {
 
 
 // Initialize first array
-const tasks = []; 
+const tasks = [];
 
 // Get the form element
 const form = document.getElementById('form');
@@ -49,13 +49,26 @@ function updateTasks() {
 
     const taskEntries = document.getElementById('taskEntries');
     taskEntries.innerHTML = ''; // Clear the current tasks list
+    
+    let index = 0;
 
     // Loop through the tasks array and create a new list item for each task
     for (const task of tasks) {
-        const listItem = document.createElement('p');
+        const listItem = document.createElement('p');        
+        listItem.setAttribute('id', index++);
+        
         listItem.textContent = 'Title: ' + task.title + ' Description: ' + task.description + ' Due date: ' +
             task.date_due + ' Importance: ' + task.importance;
         taskEntries.appendChild(listItem);
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = "del";
+        listItem.appendChild(removeButton);
+
+        // Add event listener to remove button
+        removeButton.addEventListener('click', function () {
+            removeTask();
+        }); 
     }
 
     document.getElementById('tasks').style.display = 'block';
@@ -63,6 +76,11 @@ function updateTasks() {
     document.getElementById('completedTasks').style.display = 'none';
 
     localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function removeTask(index) {
+    tasks.splice(index, 1); // Remove the task at the given index
+    updateTasks(); // Update the task list to reflect the removal
 }
 
 // Sort Alphabetical
