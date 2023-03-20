@@ -8,7 +8,6 @@ class Task {
     }
 };
 
-
 // Initialize first array
 const tasks = [];
 
@@ -49,14 +48,10 @@ function updateTasks() {
 
     const taskEntries = document.getElementById('taskEntries');
     taskEntries.innerHTML = ''; // Clear the current tasks list
-    
-    let index = 0;
 
-    // Loop through the tasks array and create a new list item for each task
-    for (const task of tasks) {
-        const listItem = document.createElement('p');        
-        listItem.setAttribute('id', index++);
-        
+    for (const [index, task] of tasks.entries()) {
+        const listItem = document.createElement('p');
+        listItem.setAttribute('id', index);
         listItem.textContent = 'Title: ' + task.title + ' Description: ' + task.description + ' Due date: ' +
             task.date_due + ' Importance: ' + task.importance;
         taskEntries.appendChild(listItem);
@@ -67,8 +62,11 @@ function updateTasks() {
 
         // Add event listener to remove button
         removeButton.addEventListener('click', function () {
-            removeTask();
-        }); 
+            // Remove task from the array
+            tasks.splice(index, 1);
+            // Remove task entry from the UI
+            listItem.remove();
+        });
     }
 
     document.getElementById('tasks').style.display = 'block';
@@ -76,11 +74,6 @@ function updateTasks() {
     document.getElementById('completedTasks').style.display = 'none';
 
     localStorage.setItem('tasks', JSON.stringify(tasks));
-}
-
-function removeTask(index) {
-    tasks.splice(index, 1); // Remove the task at the given index
-    updateTasks(); // Update the task list to reflect the removal
 }
 
 // Sort Alphabetical
