@@ -73,7 +73,7 @@
 
                 <label for="due-date">Due Date:</label>
                 <input type="date" id="due-date" name="due-date" required>
-                
+
                 <label for="importance">Importance:</label>
                 <select id="importance" name="importance" required>
                     <option value="low">Low</option>
@@ -86,6 +86,8 @@
         </div>
 
         <div id="tasks">
+            <button id="sort" class="sort" onclick='sortTasks()'>Sort</button>
+            <div id="taskEntries"></div>
             <!-- Tasks will be dynamically added here -->
 
             <!-- delete -->

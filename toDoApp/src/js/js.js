@@ -8,8 +8,9 @@ class Task {
     }
 };
 
+
 // Initialize first array
-const tasks = [];
+const tasks = []; 
 
 // Get the form element
 const form = document.getElementById('form');
@@ -41,25 +42,33 @@ function addNewTask(event) {
     document.getElementById('importance').value = '';
 
     // Update the tasks list
-    updateTasksList();
+    updateTasks();
 }
 
-function updateTasksList() {
-    const tasksList = document.getElementById('tasks');
-    tasksList.innerHTML = ''; // Clear the current tasks list
+function updateTasks() {
+
+    const taskEntries = document.getElementById('taskEntries');
+    taskEntries.innerHTML = ''; // Clear the current tasks list
 
     // Loop through the tasks array and create a new list item for each task
     for (const task of tasks) {
-        const listItem = document.createElement('li');
-        listItem.textContent = 'Title: ' + task.title + 'Description: ' + task.description + 'Due date: ' +
-            task.date_due + 'Importance: ' + task.importance;
-        tasksList.appendChild(listItem);
+        const listItem = document.createElement('p');
+        listItem.textContent = 'Title: ' + task.title + ' Description: ' + task.description + ' Due date: ' +
+            task.date_due + ' Importance: ' + task.importance;
+        taskEntries.appendChild(listItem);
     }
 
     document.getElementById('tasks').style.display = 'block';
     document.getElementById('taskForm').style.display = 'none';
     document.getElementById('completedTasks').style.display = 'none';
 
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+// Sort Alphabetical
+function sortTasks() {
+    tasks.sort((a, b) => a.title.localeCompare(b.title));
+    updateTasks();
 }
 
 // NavBar
@@ -86,3 +95,5 @@ completedNav.addEventListener("click", () => {
     document.getElementById('completedTasks').style.display = 'block';
     document.getElementById('taskForm').style.display = 'none';
 });
+
+
