@@ -10,6 +10,7 @@ class Task {
 
 // Initialize first array
 const tasks = [];
+const completedTasks = [];
 
 // Get the form element
 const form = document.getElementById('form');
@@ -56,8 +57,23 @@ function updateTasks() {
             task.date_due + ' Importance: ' + task.importance;
         taskEntries.appendChild(listItem);
 
+
+
+
+
+        // cOMPLETE TASKS
+        const completeButton = document.createElement('button');
+        completeButton.textContent = "FIN";
+        listItem.appendChild(completeButton);
+
+
+
+
+
+
+
         const removeButton = document.createElement('button');
-        removeButton.textContent = "del";
+        removeButton.textContent = "DEL";
         listItem.appendChild(removeButton);
 
         // Add event listener to remove button
