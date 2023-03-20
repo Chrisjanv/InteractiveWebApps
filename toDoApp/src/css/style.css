@@ -9,6 +9,8 @@ header {
     flex-direction: column;
     max-width: 500px;
     margin: auto;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
 
     background-color: #f8f9fa;
 }
@@ -69,4 +71,10 @@ button[type="submit"] {
     border-radius: 0.25rem;
     cursor: pointer;
     margin-top: 0.5rem;
+}
+
+/* Dynamic content changes */
+
+#tasks, #completedTasks{
+    display: none;
 }

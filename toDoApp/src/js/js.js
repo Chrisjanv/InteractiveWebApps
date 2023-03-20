@@ -51,8 +51,38 @@ function updateTasksList() {
     // Loop through the tasks array and create a new list item for each task
     for (const task of tasks) {
         const listItem = document.createElement('li');
-        listItem.textContent = task.title + ' , ' + task.description + ' , ' + 
-        task.date_due + ' , ' + task.importance;
+        listItem.textContent = task.title + ' , ' + task.description + ' , ' +
+            task.date_due + ' , ' + task.importance;
         tasksList.appendChild(listItem);
     }
+
+    document.getElementById('tasks').style.display = 'block';
+    document.getElementById('taskForm').style.display = 'none';
+    document.getElementById('completedTasks').style.display = 'none';
+
 }
+
+// NavBar
+
+const addTaskNav = document.getElementById("addTaskNav");
+const tasksNav = document.getElementById("tasksNav");
+const completedNav = document.getElementById("completedNav");
+
+
+addTaskNav.addEventListener("click", () => {
+    document.getElementById('tasks').style.display = 'none';
+    document.getElementById('completedTasks').style.display = 'none';
+    document.getElementById('taskForm').style.display = 'block'; 
+});
+
+tasksNav.addEventListener("click", () => {
+    document.getElementById('tasks').style.display = 'block';
+    document.getElementById('completedTasks').style.display = 'none';
+    document.getElementById('taskForm').style.display = 'none';
+});
+
+completedNav.addEventListener("click", () => {
+    document.getElementById('tasks').style.display = 'none';
+    document.getElementById('completedTasks').style.display = 'block';
+    document.getElementById('taskForm').style.display = 'none';
+});
