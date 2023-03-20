@@ -1,9 +1,10 @@
-*{
+* {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     background-color: aliceblue;
 }
 
+/* Header */
 header {
     display: flex;
     flex-direction: column;
@@ -11,15 +12,27 @@ header {
     margin: auto;
 }
 
-h1,h3{
-    
+#h1,
+#h2 {
+    margin-bottom: 1rem;
+    margin-top: 0;
+    padding: 0;
+    text-align: center;
 }
 
+/* Form styling */
 form {
     display: flex;
     flex-direction: column;
     max-width: 500px;
     margin: auto;
+}
+
+@media only screen and (max-width: 535px) {
+    form {
+        margin-left: 1rem;
+        margin-right: 1rem;        
+    }
 }
 
 label {
