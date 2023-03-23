@@ -53,14 +53,16 @@ function updateTasks() {
     for (const [index, task] of tasks.entries()) {
         const listItem = document.createElement('p');
         listItem.setAttribute('id', index);
-        listItem.textContent = 'Title: ' + task.title + ' Description: ' + task.description + ' Due date: ' +
-            task.date_due + ' Importance: ' + task.importance;
+        listItem.innerHTML = '<b>Title:</b> ' + task.title + '<br>' + '<b>Description:</b> ' + task.description + '<br>' + ' <B>Due date:</b> ' +
+            task.date_due + '<br>' + '<b>Importance:</b> ' + task.importance + '<br>';
         taskEntries.appendChild(listItem);
+
 
 
         // cOMPLETE TASKS
         const completeButton = document.createElement('button');
-        completeButton.textContent = "FIN";
+        completeButton.style.margin = '1rem';
+        completeButton.innerHTML = "FIN";
         listItem.appendChild(completeButton);
 
         completeButton.addEventListener('click', function () {
@@ -72,6 +74,7 @@ function updateTasks() {
         });
 
         const removeButton = document.createElement('button');
+        removeButton.style.margin = '1rem';
         removeButton.textContent = "DEL";
         listItem.appendChild(removeButton);
 
