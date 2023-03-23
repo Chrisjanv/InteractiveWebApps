@@ -127,8 +127,7 @@ completedNav.addEventListener("click", () => {
     const completedTasksDiv = document.getElementById('completedTasks');
     completedTasksDiv.innerHTML = ''; // Clear the current tasks list
 
-    // Different for loop syntax
-    for (let i = 0; i < completedTasks.length; i++) {
+    for (const completedTask of completedTasks) {
         const listItem = document.createElement('p');
         listItem.textContent = 'Title: ' + completedTasks.title + ' Description: ' + completedTasks.description + ' Due date: ' +
             completedTasks.date_due + ' Importance: ' + completedTasks.importance;
