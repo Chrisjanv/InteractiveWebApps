@@ -66,7 +66,7 @@ function updateTasks() {
         listItem.appendChild(completeButton);
 
         completeButton.addEventListener('click', function () {
-            completedTasks.push(tasks[index]);
+            completedTasks.push(index.value);
             // Remove task from the array
             tasks.splice(index, 1);
             // Remove task entry from the UI
