@@ -129,8 +129,11 @@ completedNav.addEventListener("click", () => {
 
     for (const completedTask of completedTasks) {
         const listItem = document.createElement('p');
-        listItem.textContent = 'Title: ' + completedTasks.title + ' Description: ' + completedTasks.description + ' Due date: ' +
-            completedTasks.date_due + ' Importance: ' + completedTasks.importance;
+        listItem.innerHTML = '<b>Title:</b> ' + completedTask.title + '<br>' + '<b>Description:</b> ' + completedTask.description + '<br>' + ' <B>Due date:</b> ' +
+            completedTask.date_due + '<br>' + '<b>Importance:</b> ' + completedTask.importance;
         completedTasksDiv.appendChild(listItem);
+        listItem.style.textDecoration = 'line-through';
     }
 });
+
+
