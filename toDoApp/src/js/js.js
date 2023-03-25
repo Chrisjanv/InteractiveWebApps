@@ -52,7 +52,7 @@ function updateTasks() {
 
     for (const [index, task] of tasks.entries()) {
         const listItem = document.createElement('p');
-        listItem.setAttribute('id', index);
+        listItem.setAttribute('class', index);
         listItem.innerHTML = '<b>Title:</b> ' + task.title + '<br>' + '<b>Description:</b> ' + task.description + '<br>' + ' <B>Due date:</b> ' +
             task.date_due + '<br>' + '<b>Importance:</b> ' + task.importance + '<br>';
         taskEntries.appendChild(listItem);
@@ -66,7 +66,7 @@ function updateTasks() {
         listItem.appendChild(completeButton);
 
         completeButton.addEventListener('click', function () {
-            completedTasks.push(index.value);
+            completedTasks.push(task);
             // Remove task from the array
             tasks.splice(index, 1);
             // Remove task entry from the UI
